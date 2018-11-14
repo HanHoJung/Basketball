@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>방만들기</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/public/css/room.css">
+</head>
+<body align="center">
+  <h1 class="show">방만들기</h1>
+  <form method="post">
+  <img align="center" src="/public/img/board1.svg" id="photoOutput" width="200px">
+      <table align="center" border="1">
+        <tr>
+          <td><label>작성자</label></td>
+          <td colspan="2"><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+          <td><label>방 제목</label></td>
+          <td colspan="2"><input type="text" name="roomname" /></td>
+        </tr>
+        <tr>
+          <td><label>지역</label></td>
+          <td colspan="2"><input type="text" name="area" /></td>
+        </tr>
+        <tr>
+          <td><label>방상태</label></td>
+          <td><input type="radio" value="team_Create" name="roomstate">팀 구성중</td>
+          <td><input type="radio" value="team_Complete" name="roomstate">팀 구성완료</td>
+        </tr>
+          <tr>
+            <td><label>비밀번호</label></td>
+            <td colspan="2"><input type="password" name="password"></td>
+          </tr>
+        <tr>
+          <td><label>시간</label></td>
+          <td colspan="2"><input type="time" name="time"></td>
+        </tr>
+      </table></br>
+      <textarea name="" id="" cols=50 rows="5" ></textarea><br>
+        <button class="btn btn-info" ><a href="/board">이전페이지</a></button>
+        <input type="submit" value="방 만들기" class="btn btn-info">
+
+  </form>
+</body>
+</html>

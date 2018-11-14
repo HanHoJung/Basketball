@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입 테스트</title>
+	</head>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+<body>
+	<h1>회원가입</h1>
+
+	<form method="post"  enctype="multipart/form-data" action="/process/adduser">
+		<img src="./img/user.png" id="photoOutput" width="200px">
+	  <br>
+	  <input type="file" name="photo" id="photoInput">
+	  <button type="button" name="button" id="deleteImage">사진삭제</button>
+		<br>
+		<table>
+			<tr>
+				<td><label>아이디</label></td>
+				<td><input type="text" name="id" /></td>
+			</tr>
+
+			<tr>
+				<td><label>비밀번호</label></td>
+				<td><input id ='pass1' type="password" name="password" /></td>
+			</tr>
+
+      <tr>
+				<td><label>비밀번호 확인</label></td>
+				<td><input id ='pass2' type="password" name="password_check" /></td>
+			</tr>
+
+      <tr>
+        <td><label>성별</label></td>
+				<td><input onclick="oneCheckbox(this,1)" type="checkbox" name="gender" value="boy">남성</td>
+        <td><input onclick="oneCheckbox(this,1)" type="checkbox" name="gender" value="girl">여성</td>
+			</tr>
+
+      <tr>
+        <td><label>포지션</label></td>
+				<td><input onclick="oneCheckbox(this,2)" type="checkbox" name="position" value= "center">센터</td>
+        <td><input onclick="oneCheckbox(this,2)" type="checkbox" name="position" value="forward">포워드</td>
+        <td><input onclick="oneCheckbox(this,2)" type="checkbox" name="position" value ="gard">가드</td>
+			</tr>
+
+      <tr>
+        <td><label>키</label></td>
+        <td> <input type="number" name="quantity" min="150" max="200">cm</td>
+      </tr>
+
+      <tr>
+        <td><label>지역</label></td>
+
+        <td><select  name="local">
+          <option >동작구</option>
+          <option >종로구</option>
+          <option >노원구</option>
+          <option >양천구</option>
+        </select>
+        </td>
+
+      </tr>
+
+      <tr>
+
+          <td><label>실력</label></td>
+          <td><input onclick="oneCheckbox(this,3)" type="radio" name="level" value="high">상</td>
+          <td><input onclick="oneCheckbox(this,3)" type="radio" name="level" value='middle'>중</td>
+          <td><input onclick="oneCheckbox(this,3)" type="radio" name="level" value='low'>하</td>
+
+      </tr>
+
+      <tr><td><button type="button">취소하기</button></td>
+          <td><button type="submit">제출하기</button></td>
+      </tr>
+    </form>
+
+
+    <script >
+
+		$(function() {
+
+                // 파일선택 값이 바뀌면
+                $("#photoInput").change(function() {
+                    readURL(this);
+                });
+            });
+
+		function readURL(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                  $('#photoOutput').attr('src', e.target.result);
+              }
+              reader.readAsDataURL(input.files[0]);
+          }
+
+      }
+
+			$("#deleteImage").click(function(){
+				console.log(1)
+				$("#photoOutput").attr('src','./img/user.png');
+
+
+
+			});
+
+
+
+
+
+    function passwordcheck(){
+      var pass1 = document.getElementById('pass1');
+      var pass2 = document.getElementById('pass2');
+      console.log(pass1.innerHTML());
+    }
+
+
+
+    function oneCheckbox(a,type){
+
+      if(type ===1){
+          console.log(1);
+        var obj = document.getElementsByName("gender");
+        for(var i=0; i<obj.length; i++){
+            if(obj[i] != a)
+                obj[i].checked = false;
+
+            }
+
+      } else if(type === 2){
+        console.log(2);
+        var obj = document.getElementsByName("position");
+        for(var i=0; i<obj.length; i++){
+            if(obj[i] != a)
+                obj[i].checked = false;
+
+            }
+      }else{
+        console.log(3);
+
+        var obj = document.getElementsByName("level");
+        for(var i=0; i<obj.length; i++){
+            if(obj[i] != a)
+                obj[i].checked = false;
+
+            }
+
+      }
+  }
+
+    </script>
+
+</html>

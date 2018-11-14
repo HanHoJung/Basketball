@@ -1,0 +1,131 @@
+
+
+
+#wrapper3>*>*{
+  border:5px solid blue;
+}
+
+#wrapper4 >*>*>*{
+  border:5px solid red;
+}
+
+#footer{
+  text-align: center;
+
+}
+
+.contact{
+  list-style-type: none;
+  display: inline;
+}
+
+#copyright{
+  text-align: center;
+}
+
+body{
+  font-family: 'Varela Round', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(../img/bg.jpg);
+  background-size: cover;
+}
+
+
+#header{
+  text-align: center;
+
+}
+#wrapper2{
+  text-align: center;
+
+}
+
+#uname{
+  display: inline
+}
+
+#logo h1{
+  margin:0;
+  padding:0;
+}
+#logo h1 a{
+  text-decoration: none;
+  font-size: 3.5em;
+  color: #6C2A6A;
+
+}
+
+#log > img{
+  display:inline;
+}
+
+
+
+h1, h2, h3, h4, h5, h6, a {
+margin:0; padding:0;
+}
+.login {
+margin:0 auto;
+max-width:500px;
+}
+.login-header {
+
+text-align:center;
+font-size:300%;
+}
+/* .login-header h1 {
+ text-shadow: 0px 5px 15px #000; */
+}
+.login-form {
+border:.5px solid #fff;
+border-radius:10px;
+box-shadow:0px 0px 10px #000;
+}
+.login-form h3 {
+text-align:left;
+margin-left:40px;
+
+}
+.login-form {
+box-sizing:border-box;
+padding-top:15px;
+padding-bottom:10%;
+margin:5% auto;
+text-align:center;
+}
+.login input[type="text"],
+.login input[type="password"] {
+max-width:400px;
+width: 80%;
+line-height:3em;
+margin:1em 2em;
+border-radius:5px;
+border:2px solid #f2f2f2;
+outline:none;
+padding-left:10px;
+}
+.login-form input[type="button"] {
+height:30px;
+width:100px;
+border:1px solid #f2f2f2;
+border-radius:20px;
+color: slategrey;
+text-transform:uppercase;
+cursor:pointer;
+}
+
+
+/*Media Querie*/
+@media only screen and (min-width : 150px) and (max-width : 530px){
+.login-form h3 {
+  text-align:center;
+  margin:0;
+}
+.sign-up, .no-access {
+  margin:10px 0;
+}
+.login-button {
+  margin-bottom:10px;
+}
+}

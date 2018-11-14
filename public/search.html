@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <title>List Page</title>
+<link rel="stylesheet" href="../public/css/board.css">
+</head>
+<body>
+  <form method= "post">
+  <h1 align=center class="show">게시판</h1>
+  <h1 align=right><input type="button" onclick="location.href='/board'" value="뒤로가기" class="btn btn-info"></h1>
+  <span>
+    <img src="../public/img/nba.png" width="100px" height="100px">
+    <img src="../public/img/kbl.jpg" width="100px" height="100px">
+    <img src="../public/img/ball.png" width="100px" height="100px">
+  </span>
+  <div>
+<h1><input type="button" onclick="location.href='/createRoom'" value="방만들기" class="btn btn-info"></h1>
+
+  <span>
+  <input type="text" placeholder="지역검색" name="search">
+  <input type="submit" value="검색" class="btn btn-info">
+  </span>
+  </div>
+  <hr />
+  <table width="100%" border="1">
+    <tr>
+      <th>삭제하기</th>
+      <th>수정하기</th>
+      <th>번호</th>
+      <th>작성자</th>
+      <th>제 목</th>
+      <th>지역</th>
+      <th>
+        <Select name="방상태">
+        <option value="">팀 상태</option>
+        <option value="">팀 구성중</option>
+        <option value="">팀 구성완료</option>
+        </Select>
+        </th>
+      <th>시간</th>
+    </tr>
+    <% data.forEach(function (item, index) { %>
+    <tr>
+      <td><a href="/delete/<%= item.count %>">삭제하기</a></td>
+      <td><a href="/edit/<%= item.count %>">수정하기</a></td>
+      <td><%= item.count %></td>
+      <td><%= item.name %></td>
+      <td><a href="/chat/<%= item.count%>"><%= item.roomname %></td>
+      <td><%= item.area %></td>
+      <td><%= item.roomstate %></td>
+      <td><%= item.time %></td>
+    </tr>
+    <% }); %>
+  </table>
+  </form>
+</body>
+</html>
